@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="quoteBook">
+<head>
+	<title>Quote Book</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="mainCtrl">
+	<div class='header'>
+		<h4>Quotable History</h4>
+	</div>	
+	<div class='submit_box'>
+			<input type='text' placeholder="Search Content" ng-model='searchAll' />
+		</div>
+		<div class='addQuote'>
+			<textarea placeholder="Inspire Us" ng-model='addNewQuote'></textarea>
+			<input placeholder="Author" ng-model='addNewAuthor'>
+			<button ng-click="newQuote()">Submit</button>
+			<button ng-click="deleteQuote()">Delete Quote</button>
+		</div>
+	<div class='middle_container'>
+
+		<div class='quoteArea' ng-repeat='quote in quotes | filter: searchAll'>
+
+			<p> {{quote.text}}  -{{quote.author}} </p> 
+
+		</div>
+
+
+	</div>
+	
+
+
+
+
+
+<textarea placeholder="Inspire Us" ng-model='addNewQuote'></textarea>
+			<input placeholder="Author" ng-model='addNewAuthor'>
+			<button ng-click="newQuote()">Submit</button>
+			<button ng-click="deleteQuote()">Delete Quote</button>
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/service.js"></script>
+</body>
+</html>
